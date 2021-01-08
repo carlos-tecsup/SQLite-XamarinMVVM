@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           
+              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             xmlns:ViewModel="clr-namespace:Tarea.ViewModels"
+             x:Class="Tarea.Views.PersonasPage"
+               Title="Lista de Matriculas" >
+    <ContentPage.BindingContext>
+        <ViewModel:PersonasViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform 
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50"/>
+            </StackLayout.Padding>
+
+            <ListView
+                ItemsSource="{Binding Personas}"
+                HasUnevenRows="True"            
+                SeparatorVisibility="None"
+                                  ItemTapped="OnPersonaTapped"
+>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                CornerRadius="20"
+                                HasShadow="True"
+                                Margin="3">
+
+                                <StackLayout
+                                    Orientation="Vertical">
+                                    <Grid
+                                    VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label 
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Text="Nombre Alumno: "
+                                            FontAttributes="Bold"/>
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1" 
+                                            Text="{Binding Nombre}"/>
+
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Text="Monto(S/.): "
+                                            FontAttributes="Bold"/>
+
+                                        <Label 
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Text="{Binding Monto}"/>
+
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Text="Fecha de matricula: "
+                                            FontAttributes="Bold"/>
+
+                                        <Label 
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Text="{Binding Fecha_matricula, StringFormat='{0:MMMM dd, yyyy}'}"/>
+
+                                        <Label
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Text="Alumno Nuevo: "
+                                            FontAttributes="Bold"/>
+
+                                        <Label
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            Text="{Binding Estado}"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

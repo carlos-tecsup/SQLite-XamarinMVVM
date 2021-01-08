@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea.Views.DetailsPage"
+              Title="Detalles">
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem 
+            Text="Editar"
+                     Icon="editar.png"
+                     Command="{Binding EditPersonaCommand}" />
+
+        <ToolbarItem 
+            Text="Eliminar"
+                     Icon="eliminar.png"
+                     Command="{Binding DeletePersonaCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout  Orientation="Vertical" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Margin="16,8,16,8">
+
+            <Label 
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Text="Nombre Alumno: "
+                                            FontAttributes="Bold"
+                 Margin="8"
+                       FontSize="Large"
+                       />
+
+            <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1" 
+                                            Text="{Binding Nombre}"
+                
+                  Margin="8"
+                       FontSize="Medium"/>
+
+            <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Text="Monto(S/.): "
+                                            FontAttributes="Bold"  Margin="8"
+                       FontSize="Large"/>
+
+            <Label 
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Text="{Binding Monto}"
+                Margin="8"
+                       FontSize="Medium"/>
+
+            <Label
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Text="Fecha de matricula: "
+                                            FontAttributes="Bold"
+                Margin="8"
+                       FontSize="Large"/>
+
+            <Label 
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            Text="{Binding Fecha_matricula, StringFormat='{0:MMMM dd, yyyy}'} "
+                Margin="8"
+                       FontSize="Medium"/>
+
+            <Label
+                                            Grid.Row="4"
+                                            Grid.Column="0"
+                                            Text="Alumno Nuevo: "
+                                            FontAttributes="Bold"
+                Margin="8"
+                       FontSize="Large"/>
+
+            <Label
+                                            Grid.Row="4"
+                                            Grid.Column="1"
+                                            Text="{Binding Estado}"
+                Margin="8"
+                       FontSize="Medium"/>
+
+
+
+        </StackLayout>
+
+
+
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
